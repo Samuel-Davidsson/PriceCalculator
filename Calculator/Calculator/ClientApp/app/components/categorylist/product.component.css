@@ -1,0 +1,33 @@
+﻿.cartegory {
+    cursor: pointer;
+}
+
+.colapsed {
+    color: #888;
+}
+
+.category.hide {
+    visibility: collapse;
+}
+
+.productItem {
+    border: 3px solid #eee;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    background-color: EEE;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .productItem:hover {
+        border: 3px solid #ddd;
+    }
+
+    .productItem.isActive {
+        border: 3px solid orange;
+    }
+
+        .productItem.isActive:hover {
+            border: 3px solid #ff8c00;
+        }

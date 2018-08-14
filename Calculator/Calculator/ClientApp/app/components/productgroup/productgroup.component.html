@@ -1,0 +1,39 @@
+<div class="wrapper">
+    <div *ngIf='productGroup'>
+        <div>
+            <div style="width: 380px; height: auto; margin-top: 65px; margin-right: 25px; float: left">
+                <img src="{{productGroup.imageUrl}}" style="height: 250px">
+                <br/>
+                <br/>
+                <br/>
+                Din valda produklista:<br/>
+                <a href="{{selectedUrlString}}">{{selectedUrlString}}</a>
+                <br/>
+                <br/>
+                 <a href="."> - Finnansieringsinformation</a>
+                
+            </div>
+            <div style="width: 380px; height: auto; margin-top: 25px; float: left">
+                <h1>{{productGroup.name}}</h1>
+                <h4>{{productGroup.description}}</h4>
+                <div>
+                    <category-list (onSelectProduct)="onSelectProduct()" [categories]="productGroup.categories"></category-list>
+                </div>
+                <div style="height: 160px">
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="priceContainer">
+        <div>
+            <span style="width: 150px; display: block; float: left;">Fast kostnad:</span><span class="price">{{factualCost}} kr</span>
+        </div>
+        <div style="float: none">
+            <span style="width: 150px; display: block; float: left;">M&aring;nadskostnad:</span><span class="price">{{variableCost}} kr</span>
+            </div>
+    </div>
+</footer>

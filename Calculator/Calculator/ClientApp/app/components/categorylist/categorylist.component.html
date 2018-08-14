@@ -1,0 +1,26 @@
+﻿<html>
+<body>
+    <div class="body-content" *ngFor="let category of categories">
+        <div class="cartegory" style="border-top: 1px solid #d6d6d6;font-size: 17px; line-height: 1.52947; font-weight: 600; letter-spacing: -.021em; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; margin-top: 30px;">
+            <div style="margin-top: 20px" (click)="onColapsed(category)" [ngClass]="category.isColapsed ? 'colapsed' : ''">
+                <img width="40" src="{{category.imageUrl}}" />
+                <span>{{category.name}}</span> <span [ngClass]="category.isColapsed ? 'category' : 'category hide'"> ⯆ </span>
+                <span style="font-size: 12px;color: #666"> ( Du har valt: {{category.totalSelectedItems}} st)</span>
+            </div>
+        </div>
+
+        <div [ngClass]="category.isColapsed ? 'category hide' : 'category'">
+
+            <div *ngFor="let product of category.products" style="margin-top: 10px;margin-bottom:10px">
+                <div [ngClass]="product.isSelected ? 'productItem isActive' : 'productItem'" (click)="selectProduct(category.id, product.id)">
+                    <div style="position: relative">
+                        <b>{{product.name}}</b><br />
+                        <div style="font-size: 12px;">{{(product.description.length>100)? (product.description | slice:0:100)+'...':(product.description) }}</div><br />
+                        <span style="color: gray">{{product.price}} Kr</span><span *ngIf="product.isFactualCost == false"> i M&aring;naden</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>  

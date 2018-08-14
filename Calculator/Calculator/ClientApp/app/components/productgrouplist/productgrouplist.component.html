@@ -1,0 +1,10 @@
+﻿
+<div [routerLink]="['/home', productgroup.id]" style="width: 250px; height: 300px; float: left; border: solid 2px #ddd; cursor: pointer; margin: 10px; " *ngFor="let productgroup of productgroups">
+    <img src="{{productgroup.imageUrl}}" style="max-height: 200px; width: 246px;" />
+    <div style="margin: 15px;">
+    <div><b>{{productgroup.name}}</b></div>
+    <div>{{productgroup.description}}</div>
+    </div>
+
+</div>
+
